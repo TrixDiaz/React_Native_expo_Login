@@ -1,6 +1,6 @@
 # React_Native_Login
-Simple Login on Android
+<h3>Simple Login on Android</h3>
 
-*install npm 
-*run Device Emulator
+*install npm <br>
+*run Device Emulator <br>
 *npm start 
