@@ -3,14 +3,15 @@ import {
   Text,
   View,
   Image,
-  SafeAreaViewBase,
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
 import React from "react";
 import manOnTable from "../assets/manOnTable.jpg";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={styles.body}>
@@ -19,11 +20,23 @@ const Home = () => {
         <Text style={styles.subtitle}>
           Login to know the new updates, See you There!
         </Text>
-        <View style={{ flexDirection: "row", marginHorizontal: 30, marginVertical: 50, }}>
-          <TouchableOpacity style={styles.buttonLogin}>
+        <View
+          style={{
+            flexDirection: "row",
+            marginHorizontal: 50,
+            marginVertical: 50,
+          }}
+        >
+          <TouchableOpacity
+            style={styles.buttonLogin}
+            onPress={() => navigation.navigate("Login")}
+          >
             <Text style={styles.buttonTextLogin}>Login</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonRegister}>
+          <TouchableOpacity
+            style={styles.buttonRegister}
+            onPress={() => navigation.navigate("Register")}
+          >
             <Text style={styles.buttonTextRegister}>Register</Text>
           </TouchableOpacity>
         </View>
@@ -32,8 +45,6 @@ const Home = () => {
   );
 };
 
-export default Home;
-
 const styles = StyleSheet.create({
   body: {
     width: "100%",
@@ -41,9 +52,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   image: {
-    marginTop: 120,
-    marginBottom: 50,
-    marginHorizontal: 50,
+    marginTop: 70,
+    marginBottom: 10,
+    marginHorizontal: 30,
     justifyContent: "center",
     alignContent: "center",
   },
@@ -53,7 +64,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginHorizontal: 30,
-    marginVertical: 30,
+    marginVertical: 10,
   },
   subtitle: {
     marginVertical: 10,
@@ -65,7 +76,7 @@ const styles = StyleSheet.create({
   buttonLogin: {
     backgroundColor: "#05BFDB",
     borderRadius: 10,
-    paddingHorizontal: 60,
+    paddingHorizontal: 40,
     paddingVertical: 15,
   },
   buttonTextLogin: {
@@ -76,7 +87,7 @@ const styles = StyleSheet.create({
   buttonRegister: {
     backgroundColor: "white",
     borderRadius: 10,
-    paddingHorizontal: 60,
+    paddingHorizontal: 40,
     paddingVertical: 15,
   },
   buttonTextRegister: {
@@ -85,3 +96,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+
+export default Home;

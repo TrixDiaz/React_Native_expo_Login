@@ -9,11 +9,13 @@ import {
   Image,
 } from "react-native";
 
-import FlatButton from "./shared/buttons/button";
-import mobileBG from "./assets/mobileBG.png";
-import Logo from "./assets/Logo.png";
+import FlatButton from  "../shared/buttons/button"
+import mobileBG from "../assets/mobileBG.png";
+import Logo from "../assets/Logo.png";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   containerV: {
-    marginTop: 200,
+    marginTop: 130,
   },
   title: {
     fontSize: 24,
@@ -74,10 +76,11 @@ const styles = StyleSheet.create({
   },
   logo: {
     zIndex: 1,
-    width: 200,
-    height: 200,
-    marginLeft: 200,
-    marginTop: 50,
+    width: 150,
+    height: 150,
+    marginLeft: 180,
+    marginTop: 20,
+    marginBottom: 20,
   },
 });
 
