@@ -17,14 +17,14 @@ const Home = () => {
         <Image source={manOnTable} style={styles.image}></Image>
         <Text style={styles.title}>Welcome back you've been missed!</Text>
         <Text style={styles.subtitle}>
-          Login to Checkout the new updates, See you There!
+          Login to know the new updates, See you There!
         </Text>
-        <View style={{ flexDirection: "row",}}>
-          <TouchableOpacity style={styles.button1}>
-            <Text style={styles.buttonText1}>Login</Text>
+        <View style={{ flexDirection: "row", marginHorizontal: 30, marginVertical: 50, }}>
+          <TouchableOpacity style={styles.buttonLogin}>
+            <Text style={styles.buttonTextLogin}>Login</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button2}>
-            <Text style={styles.buttonText2}>Register</Text>
+          <TouchableOpacity style={styles.buttonRegister}>
+            <Text style={styles.buttonTextRegister}>Register</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   image: {
-    marginTop: 150,
+    marginTop: 120,
     marginBottom: 50,
     marginHorizontal: 50,
     justifyContent: "center",
@@ -53,34 +53,35 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginHorizontal: 30,
+    marginVertical: 30,
   },
   subtitle: {
-    marginVertical: 50,
-    fontSize: 20,
+    marginVertical: 10,
+    fontSize: 15,
     color: "black",
     textAlign: "center",
     marginHorizontal: 40,
   },
-  button1:{
-    backgroundColor: 'darkBlue',
+  buttonLogin: {
+    backgroundColor: "#05BFDB",
     borderRadius: 10,
     paddingHorizontal: 60,
     paddingVertical: 15,
   },
-  buttonText1:{
-    color: 'white',
+  buttonTextLogin: {
+    color: "white",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-  button2:{
-    backgroundColor: 'white',
+  buttonRegister: {
+    backgroundColor: "white",
     borderRadius: 10,
     paddingHorizontal: 60,
     paddingVertical: 15,
   },
-  buttonText2:{
-    color: 'black',
+  buttonTextRegister: {
+    color: "black",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
