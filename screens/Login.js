@@ -44,7 +44,7 @@ const Login = () => {
         <Text style={styles.title}>LOGIN</Text>
         <TextInput
           style={styles.input}
-          placeholder="Username"
+          placeholder="email"
           placeholderTextColor="#B7B7B7"
           value={email}
           onChangeText={(text) => setEmail(text)}
