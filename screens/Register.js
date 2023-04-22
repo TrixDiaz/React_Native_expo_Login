@@ -20,7 +20,6 @@ import laptop from "../assets/laptop.jpg"
   const [password, setPassword] = useState("");
 
   const handleRegister = () => {
-    const navigation = useNavigation();
     console.log(
       `Username: ${username}, Email: ${email}, Password: ${password}`
     );
@@ -55,7 +54,7 @@ import laptop from "../assets/laptop.jpg"
         <Text
           style={{
             alignSelf: "center",
-            paddingTop: 20,
+            paddingTop: 10,
             textDecorationLine: "underline",
           }}
           onPress={() => navigation.navigate("Login")}
@@ -72,13 +71,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
     backgroundColor: "#FAF9FF",
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
     color: "#000",
   },
   input: {

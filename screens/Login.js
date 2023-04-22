@@ -20,8 +20,21 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    // handle login logic here
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post("/api/login", {
+        username,
+        password,
+      });
+
+      // Store the authentication token in app state or AsyncStorage
+      const authToken = response.data.token;
+
+      // Navigate to the app's main screen and pass the authentication token as a prop
+      navigation.navigate("MainScreen", { authToken });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -31,8 +44,8 @@ const Login = () => {
         <Text style={styles.title}>LOGIN</Text>
         <TextInput
           style={styles.input}
-          placeholder="Student Number"
-          placeholderTextColor="white"
+          placeholder="Username"
+          placeholderTextColor="#B7B7B7"
           value={email}
           onChangeText={(text) => setEmail(text)}
         />
@@ -40,15 +53,20 @@ const Login = () => {
           style={styles.input}
           placeholder="Password"
           value={password}
-          placeholderTextColor="white"
+          placeholderTextColor="#B7B7B7"
           secureTextEntry={true}
           onChangeText={(text) => setPassword(text)}
         />
         <FlatButton text="Login" onPress={handleLogin} />
 
         <Text
-          style={{ alignSelf: "center", paddingTop: 20, textDecorationLine: "underline"}}
-          onPress={() => navigation.navigate("Register")}>
+          style={{
+            alignSelf: "center",
+            paddingTop: 10,
+            textDecorationLine: "underline",
+          }}
+          onPress={() => navigation.navigate("Register")}
+        >
           Don't have an Account
         </Text>
       </View>
@@ -66,14 +84,14 @@ const styles = StyleSheet.create({
   logo: {
     width: 300,
     height: 150,
-    paddingBottom: 10,
-    marginBottom: 20,
+    paddingBottom: 0,
+    marginBottom: 10,
     marginTop: -50,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 10,
     color: "#000",
   },
   input: {
@@ -83,7 +101,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     borderRadius: 10,
     paddingLeft: 10,
-    marginBottom: 20,
+    marginBottom: 10,
   },
 });
 
