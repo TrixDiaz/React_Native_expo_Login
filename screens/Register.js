@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "#FAF9FF",
+    marginBottom: 50,
   },
   title: {
     fontSize: 24,
@@ -77,9 +78,6 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     paddingHorizontal: 10,
     borderRadius: 10,
-  },
-  button: {
-    marginTop: 10,
   },
   laptop: {
     width: 300,

@@ -10,8 +10,8 @@ import {
 } from "react-native";
 
 import FlatButton from  "../shared/buttons/button"
-import mobileBG from "../assets/mobileBG.png";
-import Logo from "../assets/Logo.png";
+
+import Logo from "../assets/login.jpg";
 import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
@@ -24,40 +24,34 @@ const Login = () => {
   };
 
   return (
-    <ImageBackground source={mobileBG} style={styles.container}>
-      <View style={styles.containerV}>
-        <Text style={styles.title}>LOGIN</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Student Number"
-          placeholderTextColor="white"
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          value={password}
-          placeholderTextColor="white"
-          secureTextEntry={true}
-          onChangeText={(text) => setPassword(text)}
-        />
-        <FlatButton text="Login" onPress={handleLogin} />
-      </View>
-      <Image source={Logo} style={styles.logo} />
-    </ImageBackground>
+    <View style={styles.container}>
+      <Image source={Logo} />
+      <Text style={styles.title}>LOGIN</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Student Number"
+        placeholderTextColor="white"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        value={password}
+        placeholderTextColor="white"
+        secureTextEntry={true}
+        onChangeText={(text) => setPassword(text)}
+      />
+      <FlatButton text="Login" onPress={handleLogin} />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
-  },
-  containerV: {
-    marginTop: 130,
   },
   title: {
     fontSize: 24,
@@ -75,10 +69,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   logo: {
-    zIndex: 1,
-    width: 150,
-    height: 150,
-    marginLeft: 180,
+    width: 50,
+    height: 10,
+    height: 100,
     marginTop: 20,
     marginBottom: 20,
   },
