@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 40,
   },
   buttonLogin: {
-    backgroundColor: "#05BFDB",
+    backgroundColor: "#E384FF",
     borderRadius: 10,
     paddingHorizontal: 40,
     paddingVertical: 15,

@@ -12,7 +12,9 @@ import { useNavigation } from "@react-navigation/native";
 import FlatButton from "../shared/buttons/button";
 import laptop from "../assets/laptop.jpg"
 
+
  function RegistrationForm() {
+  const navigation = useNavigation();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +29,7 @@ import laptop from "../assets/laptop.jpg"
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={laptop} style={styles.laptop}></Image> 
+      <Image source={laptop} style={styles.laptop}></Image>
       <View>
         <Text style={styles.title}>REGISTER</Text>
         <TextInput
@@ -50,6 +52,16 @@ import laptop from "../assets/laptop.jpg"
           onChangeText={setPassword}
         />
         <FlatButton text="Register" onPress={handleRegister} />
+        <Text
+          style={{
+            alignSelf: "center",
+            paddingTop: 20,
+            textDecorationLine: "underline",
+          }}
+          onPress={() => navigation.navigate("Login")}
+        >
+          Already have an Account
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -60,9 +72,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    padding: 10,
     backgroundColor: "#FAF9FF",
-    marginBottom: 50,
   },
   title: {
     fontSize: 24,
