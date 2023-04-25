@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 import FlatButton from "../shared/buttons/button";
-
+import * as Keychain from "react-native-keychain";
 import Logo from "../assets/login.jpg";
 import { useNavigation } from "@react-navigation/native";
 
@@ -22,10 +22,17 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("/api/login", {
-        username,
-        password,
+      Keychain.setGenericPassword("token", token).then(() => {
+        console.log("Token stored securely");
       });
+
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/apirequest/",
+        {
+          username,
+          password,
+        }
+      );
 
       // Store the authentication token in app state or AsyncStorage
       const authToken = response.data.token;
