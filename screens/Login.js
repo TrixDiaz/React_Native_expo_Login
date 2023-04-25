@@ -27,7 +27,7 @@ const Login = () => {
       });
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/apirequest/",
+        "http://192.168.100.114:19000npm/api/apirequest/",
         {
           username,
           password,
@@ -38,7 +38,7 @@ const Login = () => {
       const authToken = response.data.token;
 
       // Navigate to the app's main screen and pass the authentication token as a prop
-      navigation.navigate("MainScreen", { authToken });
+      navigation.navigate("Dashboard", { authToken });
     } catch (error) {
       console.log(error);
     }
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 300,
     height: 150,
+    marginLeft: 10,
     paddingBottom: 0,
     marginBottom: 10,
     marginTop: -50,

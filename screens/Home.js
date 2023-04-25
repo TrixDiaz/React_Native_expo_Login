@@ -23,7 +23,7 @@ const Home = () => {
         <View
           style={{
             flexDirection: "row",
-            marginHorizontal: 50,
+            marginHorizontal: 80,
             marginVertical: 50,
           }}
         >
@@ -52,9 +52,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   image: {
-    marginTop: 70,
+    marginTop: 150,
     marginBottom: 10,
-    marginHorizontal: 30,
+    marginHorizontal: 55,
     justifyContent: "center",
     alignContent: "center",
   },
